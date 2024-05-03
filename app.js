@@ -20,4 +20,12 @@ libaryInstance.books.push(lotr);
 
 console.log(libaryInstance);
 
+let lotr2 = new Book("The two Towers", "Fancy");
+console.log(Book.count);
+
+lotr2 = null;
+Book.removeBook();
+
+console.log(libaryInstance.books[0].getBookName());
+
 // Log the data in the Library
