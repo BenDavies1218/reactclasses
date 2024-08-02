@@ -9,22 +9,22 @@ const UserData = ({ userData, gameStats, isEditing, onStatChange }) => {
     <tr>
       {gameStats.map((stat) => (
         <td key={stat}>
-          {isEditing ? (
+          {stat === "playerName" ? (
+            userData.playerName
+          ) : isEditing ? (
             <input
-              value={
-                userData.stats[stat] !== undefined ? userData.stats[stat] : 0
-              }
-              onChange={(e) => handleInputChange(e, stat)}
+              type="number"
+              value={userData.commonStats[stat] || 0}
+              onChange={(e) => handleInputChange(stat, e.target.value)}
             />
-          ) : userData.stats[stat] !== undefined ? (
-            userData.stats[stat]
           ) : (
-            0
+            userData.commonStats[stat] || 0
           )}
         </td>
       ))}
     </tr>
   );
 };
+
 
 export default UserData;
