@@ -13,7 +13,6 @@ const UserData = ({ userData, gameStats, isEditing, onStatChange }) => {
             userData.playerName
           ) : isEditing ? (
             <input
-              type="number"
               value={userData.commonStats[stat] || 0}
               onChange={(e) => handleInputChange(stat, e.target.value)}
             />
