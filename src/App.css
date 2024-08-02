@@ -1,0 +1,52 @@
+.App {
+  text-align: center;
+}
+
+/* General container for the entire app */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the team containers */
+}
+
+/* Container for each team */
+.team-container {
+  width: 80%; /* Adjust width as needed */
+  margin: 20px 0;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+table {
+  border-collapse: collapse; /* Ensure border spacing is applied */
+  border-spacing: 10px 15px; /* Horizontal and vertical spacing */
+  width: 100%;
+  margin-top: 10px;
+}
+
+th, td {
+  border: 1px solid #ddd; /* Border for table cells */
+  padding: 12px; /* Padding inside the cells */
+  text-align: center; /* Center-align text */
+}
+
+th {
+  background-color: #4CAF50; /* Background color for headers */
+  color: white; /* Text color for headers */
+}
+
+.team-header {
+  background-color: #d3d3d3; /* Background color for team header */
+  font-weight: bold; /* Bold text for team header */
+  text-align: center; /* Center-align team header */
+  padding: 15px; /* Padding for team header */
+  border: 1px solid #ddd; /* Border for team header */
+}
+
+input {
+  width: 50px;
+  text-align: center;
+  padding: 4px;
+}
