@@ -7,7 +7,7 @@ function App() {
   const [playerStats, setPlayerStats] = useState([
     {
       userId: "usersId1",
-      playerName: "username1",
+      PlayerName: "username1",
       team: "Alpha",
       stats: {
         wins: 5,
@@ -20,7 +20,7 @@ function App() {
     },
     {
       userId: "usersId2",
-      playerName: "username2",
+      PlayerName: "username2",
       team: "Bravo",
       stats: {
         wins: 3,
