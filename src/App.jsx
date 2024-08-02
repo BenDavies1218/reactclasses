@@ -9,7 +9,7 @@ function App() {
       userId: "usersId1",
       playerName: "username1",
       team: "Alpha",
-      stats: {
+      commonStats: {
         wins: 5,
         losses: 2,
         draws: 1,
@@ -20,9 +20,35 @@ function App() {
     },
     {
       userId: "usersId2",
+      playerName: "username3",
+      team: "Bravo",
+      commonStats: {
+        wins: 3,
+        losses: 4,
+        draws: 1,
+        kills: 30,
+        deaths: 25,
+        assists: 20,
+      },
+    },
+    {
+      userId: "usersId3",
+      playerName: "username4",
+      team: "Alpha",
+      commonStats: {
+        wins: 3,
+        losses: 4,
+        draws: 1,
+        kills: 30,
+        deaths: 25,
+        assists: 20,
+      },
+    },
+    {
+      userId: "usersId4",
       playerName: "username2",
       team: "Bravo",
-      stats: {
+      commonStats: {
         wins: 3,
         losses: 4,
         draws: 1,
@@ -38,7 +64,7 @@ function App() {
     author: "Ben",
     teams: ["Alpha", "Bravo"],
     gameStats: [
-      "playerName",
+      "playerName", // Ensuring player name is included in the gameStats array
       "wins",
       "losses",
       "draws",
@@ -76,7 +102,7 @@ function App() {
         player.userId === userId
           ? {
               ...player,
-              stats: { ...player.stats, [stat]: value },
+              commonStats: { ...player.commonStats, [stat]: value },
             }
           : player
       )
@@ -88,10 +114,10 @@ function App() {
       <h1>{tournamentData.tournamentName}</h1>
       <button onClick={handleEditToggle}>{isEditing ? "Save" : "Edit"}</button>
       <div className="container">
-        <table>
-          <tbody>
-            {Object.keys(groupedByTeams).map((team) => (
-              <React.Fragment key={team}>
+        {Object.keys(groupedByTeams).map((team) => (
+          <div className="team-container" key={team}>
+            <table>
+              <tbody>
                 <tr>
                   <td
                     colSpan={tournamentData.gameStats.length}
@@ -116,10 +142,10 @@ function App() {
                     onStatChange={handleStatChange}
                   />
                 ))}
-              </React.Fragment>
-            ))}
-          </tbody>
-        </table>
+              </tbody>
+            </table>
+          </div>
+        ))}
       </div>
     </div>
   );
